@@ -120,7 +120,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 .route{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);row-gap:40px;counter-reset:r;position:relative}
 .route:before{display:none}
 .route li:after{content:"";position:absolute;left:52px;right:12px;top:21px;height:2px;background:var(--line)}
-.route li:nth-child(4n):after{display:none}
+.route li:nth-child(4n):after,.route li:last-child:after{display:none}
 .route li{counter-increment:r;position:relative;padding:62px 18px 0 0}
 .route li:before{content:counter(r);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan);display:grid;place-items:center;font-weight:900;font-size:19px;color:var(--cyan)}
 .route b{display:block;font-size:21px;line-height:1.2}.route span{display:block;color:#b9ccd8;font-size:17px;line-height:1.35;margin-top:6px}
@@ -277,15 +277,80 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 .ec p{font-size:19px;color:#c9dbe6;margin:0}
 @media(max-width:900px){.ecards{grid-template-columns:1fr}.rl{columns:1}.defs,.mc,.sliders,.cols,.trx,.solcols{grid-template-columns:1fr}.slide,.two,.cover,.diag{grid-template-columns:1fr;padding:18px;overflow:auto}.slope{min-height:380px}h1{font-size:36px}h2{font-size:30px}p{font-size:17px}footer{grid-template-columns:80px 1fr 80px;padding:0 10px}header{padding:0 12px}.logo span{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.draw{stroke-dashoffset:0}.late{opacity:1}}
+
+/* ===== Letra más grande para proyección ===== */
+.cite,.eqbox .cite{font-size:17px!important}
+.src,.collage figcaption,.gcol figcaption,.trx figcaption{font-size:15px!important}
+.kw small,.krow small{font-size:18px!important}
+.defs .chips span,.mc .chips span,.chips span{font-size:20px!important}
+.opt{font-size:20px!important}
+.who span{font-size:19px}
+.route b{font-size:23px!important}.route span{font-size:19px!important}
+.legend{font-size:21px!important}
+.sliders em{font-size:17px!important}.badge{font-size:19px!important}.tab{font-size:17px!important}
+.st{font-size:17px!important}.st b{font-size:21px!important}
+.f4t{font-size:21px!important}.f4t small{font-size:17px!important}.f4leg{font-size:18px!important}
+.col small{font-size:19px!important}.col .row{font-size:20px!important}.col p{font-size:20px!important}
+.data small{font-size:16px!important}.data span{font-size:22px!important}
+.enun p,.enun li{font-size:21px!important}
+.solc h3 small{font-size:19px!important}.lbl{font-size:20px!important}
+.vr div{font-size:20px!important}
+.rl li{font-size:18px!important}
+.raq b{font-size:23px!important}.raq span{font-size:21px!important}
+.ec p{font-size:21px!important}.ec .tags span{font-size:21px!important}
+.ask p,.ask2 li{font-size:21px!important}
+.bars2>div{font-size:21px!important}.drop{font-size:22px!important}
+.status{font-size:19px!important}.real figcaption{font-size:17px!important}
+.logo b{font-size:16px}.logo span{font-size:12px}
+.goals h3{font-size:21px!important}
+.rah{font-size:clamp(30px,3.2vw,44px);margin-bottom:6px}
+/* número de diapositiva */
+.snum{position:absolute;right:22px;bottom:14px;z-index:20;font-size:18px;font-weight:800;color:#8fa6b6;background:#030e19cc;border:1px solid var(--line);border-radius:10px;padding:4px 12px;pointer-events:none}
+
+/* ===== Ajustes para que nada se salga ===== */
+.diag .cell svg{max-height:calc(100dvh - 260px);width:auto;margin:0 auto}
+.gcol{grid-template-columns:1fr 1fr;max-width:640px!important;align-items:start}.gcol figcaption{grid-column:1/-1}
+.enun{padding:14px 20px!important}.enun p,.enun li{font-size:20px!important;line-height:1.42!important}
+@media (max-height:820px){
+ .slide{padding:22px 40px}
+ h2{font-size:clamp(28px,3.2vw,42px);margin-bottom:12px}
+ .q{font-size:clamp(24px,2.5vw,34px)!important;margin-bottom:14px}
+ .ret .q{font-size:clamp(22px,2.2vw,30px)!important}
+ .q2{font-size:23px!important;margin-bottom:12px}
+ .opt{padding:10px 14px;font-size:18px!important}.opts{gap:8px}
+ .enun p,.enun li{font-size:17.5px!important;line-height:1.38!important}.enun{margin-bottom:10px}
+ .legend{font-size:18px!important;gap:6px 18px}.eq{font-size:36px!important}.eqbox{margin-top:12px;padding-top:12px}
+ .kw{margin-bottom:10px}.chips span{font-size:18px!important;padding:7px 11px!important}
+ .rl li{font-size:15.5px!important;margin-bottom:7px}
+ .vr div{font-size:18px!important;padding:8px 12px}
+ .gcol{max-width:560px!important}
+ .mc h2,.defs h2{margin-bottom:14px}
+}
+
+/* envolvente resaltada */
+.envhl{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;transform:none!important}
+.envhl line{fill:none;stroke-linecap:round;stroke-dasharray:500;stroke-dashoffset:500}
+.envhl .glow{stroke:#ff8a2b;stroke-width:14;opacity:.35;filter:blur(3px)}
+.envhl .core{stroke:#ff6a00;stroke-width:5}
+.envhl text{font:700 17px Inter,system-ui,sans-serif;fill:#e05a00;opacity:0}
+.envhl.show line{animation:envdraw 1.4s ease forwards,envpulse 1.6s 1.4s ease-in-out infinite}
+.envhl.show text{animation:envtxt .5s 1.2s forwards}
+@keyframes envdraw{to{stroke-dashoffset:0}}
+@keyframes envpulse{0%,100%{opacity:1}50%{opacity:.55}}
+@keyframes envtxt{to{opacity:1}}
+/* tres fases */
+.phases{margin-top:18px;border:1px solid #2f5b7a;border-left:5px solid var(--cyan);background:#0b2233;border-radius:14px;padding:14px 18px;display:inline-grid;gap:10px}
+.phases b{font-size:21px;color:#9fe3ff}
+.ph{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.ph span{background:#0d2a40;border:1px solid #2f5b7a;border-radius:10px;padding:8px 14px;font-size:20px;font-weight:800}.ph i{font-style:normal;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body>
 <div class="deck">
-<header><div class="logo"><div class="mark">τ</div><div><b>RESISTENCIA AL CORTE EN SUELOS</b><span>SESIÓN DOCENTE · GEOTECNIA · UIS</span></div></div><div style="display:flex;gap:10px"><button class="btn" id="resetBtn" title="Borra votos y respuestas y vuelve a la portada">Reiniciar clase</button><button class="btn" id="notesBtn">Notas docente</button><button class="btn" id="fullBtn">Pantalla completa</button></div></header>
+<header><div class="logo"><div class="mark">τ</div><div><b>RESISTENCIA AL CORTE EN SUELOS</b><span>SESIÓN DOCENTE · GEOTECNIA · UIS</span></div></div><div style="display:flex;gap:10px"><button class="btn" id="resetBtn" title="Borra votos y respuestas y vuelve a la portada">Reiniciar clase</button><button class="btn" id="fullBtn">Pantalla completa</button></div></header>
 <main>
 
 <!-- 1 · PORTADA -->
-<section class="slide active cover" data-note="Saludo breve (15 s). No leer la portada. Se puede señalar la probeta: 'esta muestra falló a lo largo de un plano; hoy vamos a entender por qué'.">
+<section class="slide active cover">
 <div>
   <div class="k">Sesión docente</div>
   <h1>Resistencia al corte en suelos</h1>
@@ -299,7 +364,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 2 · PREGUNTA INICIAL -->
-<section class="slide two" data-note="(Inicio · 2 min) 1) Leer la pregunta con el talud estable en pantalla. 2) Pulsar 'Llover' y dejar que se vea la falla completa (≈10 s) sin explicar. 3) Siguiente (→) muestra las hipótesis: pedirlas en voz alta y marcar votos (clic suma, clic derecho resta). NO corregir: 'las dejamos anotadas y al final volvemos'.">
+<section class="slide two">
 <div>
   <p class="q">¿Por qué un suelo que ha permanecido estable durante años puede fallar después de una lluvia intensa?</p>
   <div class="fragment">
@@ -351,13 +416,30 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </div>
 </section>
 
+<!-- 6 · OBJETIVO -->
+<section class="slide goals">
+<div>
+<h2>Objetivo</h2>
+<p class="obj">Analizar la resistencia al corte de los suelos a partir del criterio de Mohr-Coulomb, relacionando el estado de esfuerzos y la presión de poros con la resistencia disponible del suelo frente a una condición de falla.</p>
+</div>
+<div>
+<h2 class="rah">Resultados de aprendizaje</h2>
+<h3>Al finalizar la sesión, se espera que puedan:</h3>
+<div class="raq">
+  <div><b>Explicar</b><span>qué representa la resistencia al corte y su relación con los esfuerzos</span></div>
+  <div><b>Interpretar</b><span>el criterio de Mohr-Coulomb y la función de c′ y φ′</span></div>
+  <div><b>Explicar</b><span>cómo un aumento de la presión de poros modifica σ′ y la resistencia</span></div>
+  <div><b>Aplicar</b><span>el criterio en un problema sencillo y relacionarlo con una situación geotécnica</span></div>
+</div>
+</div>
+</section>
+
 <!-- 3 · ORGANIZACIÓN -->
-<section class="slide plan" data-note="(≈20 s) Leer la ruta rápido; no explicar cada punto.">
+<section class="slide plan">
 <h2>Organización de la sesión</h2>
 <ol class="route">
-  <li><b>Inicio</b><span>Situación problema y pregunta inicial</span></li>
+  <li><b>Inicio</b><span>Situación problema, pregunta inicial y objetivo</span></li>
   <li><b>Resistencia al corte</b><span>¿Qué es? ¿Por qué es importante?</span></li>
-  <li><b>Objetivo</b><span>y resultados de aprendizaje</span></li>
   <li><b>Criterio de Mohr-Coulomb</b><span>Envolvente de falla</span></li>
   <li><b>Influencia del agua</b><span>y del esfuerzo efectivo</span></li>
   <li><b>Evaluación de la resistencia al corte</b><span>Corte directo y triaxial</span></li>
@@ -367,7 +449,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 4 · QUÉ ES -->
-<section class="slide defs" data-note="(Contextualización · ≈1 min) Definir con la sección 1 y 5.1 de la propuesta. Usar el deslizador: el suelo resiste mientras τ aplicado sea menor que su resistencia; la resistencia se moviliza progresivamente hasta la falla. Preguntar antes de llegar al 100 %: ¿qué va a pasar?">
+<section class="slide defs">
 <div>
   <h2>¿Qué es la resistencia al corte?</h2>
   <div class="kw">
@@ -404,7 +486,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 5 · DÓNDE SE NECESITA -->
-<section class="slide ctx" data-note="(Contextualización · ≈40 s) 'No solo en taludes': mostrar los tres problemas con →. Preguntar: ¿en cuál de estos han trabajado o visto algo en campo?">
+<section class="slide ctx">
 <h2>¿Por qué es importante?</h2>
 <p class="lead">Su conocimiento es necesario para analizar problemas en los que se deben establecer las condiciones bajo las que el suelo puede alcanzar un estado de falla <span class="cite">(Carter &amp; Bentley, 2016; Terzaghi et al., 1996)</span>.</p>
 <div class="probs">
@@ -426,25 +508,8 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </div>
 </section>
 
-<!-- 6 · OBJETIVO -->
-<section class="slide goals" data-note="(≈30 s) Leer el objetivo. Los resultados de aprendizaje se nombran por su verbo (explicar, interpretar, explicar, aplicar), no se leen completos: el jurado los tiene en la propuesta escrita; son los que se verifican en el ejercicio y al volver a la pregunta.">
-<div>
-<h2>Objetivo</h2>
-<p class="obj">Analizar la resistencia al corte de los suelos a partir del criterio de Mohr-Coulomb, relacionando el estado de esfuerzos y la presión de poros con la resistencia disponible del suelo frente a una condición de falla.</p>
-</div>
-<div>
-<h3>Al finalizar la sesión, se espera que puedan:</h3>
-<div class="raq">
-  <div><b>Explicar</b><span>qué representa la resistencia al corte y su relación con los esfuerzos</span></div>
-  <div><b>Interpretar</b><span>el criterio de Mohr-Coulomb y la función de c′ y φ′</span></div>
-  <div><b>Explicar</b><span>cómo un aumento de la presión de poros modifica σ′ y la resistencia</span></div>
-  <div><b>Aplicar</b><span>el criterio en un problema sencillo y relacionarlo con una situación geotécnica</span></div>
-</div>
-</div>
-</section>
-
 <!-- 7 · MOHR-COULOMB -->
-<section class="slide mc" data-note="(Mohr-Coulomb · parte 1) Partir de la figura de la propuesta (Figura 2), no de la ecuación. Con → se resalta c′ (intercepto) y luego φ′ (inclinación). En la pestaña Explorar se mueven c′ y φ′. Preguntar: si el suelo fuera una arena limpia, ¿qué pasaría con c′? Mover los deslizadores. Solo al final aparece la ecuación (1).">
+<section class="slide mc">
 <div>
   <h2>Criterio de Mohr-Coulomb</h2>
   <div class="kw"><small>Coulomb (1776)</small>
@@ -461,6 +526,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
   <div class="tabs"><button class="tab on" data-p="p7a">Figura</button><button class="tab" data-p="p7b">Explorar c′ y φ′</button></div>
   <div class="panel on" id="p7a">
     <div class="wfig"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAl0AAAFlCAIAAABeIcohAAA7t0lEQVR4nO3dfVxUdb4H8O+sW+6WIsNUrppmDJYuuZANWAYplQzrQ+lLbchcczWjIbVzbiYFdjfvVVuo9pxllYcMM68rg9pqJlxGN8mYSHFiZ1ZZspiJTHPdOA6KPXpd7h+/3WEaHhwef4fh8/6jF+fMmXO+QM6H3zm/B01TUxMBAAAAERH9iHcBAAAAKoJcBAAAaIZcBAAAaIZcBAAAaIZcBAAAaIZcBAAAaIZcBAAAaIZcBAAAaIZcBAAAaIZcBAAAaIZcBAAAaIZcBAAAaBZsuVhXV8e7BAAA6MOCKhcbGhoSEhJ4VwEAAH1YUOWiLMt1dXUvvPAC70IAAKCv0gTN+osNDQ0333xzQ0NDaGiox+PhXQ4AAPRJwdNelGW5oaGBiBoaGtBkBACAzgmS9qK3scg20WQEAIDOCZL2orexyKDJCAAAnRMM7UW/xiKDJiMAAHRCMLQX/RqLDJqMAADQCfzbi263e9euXZMmTYqLi+vE21ttLDJoMgIAQEf9mHcB9MUXX6SlpWVmZvrlIsvLIUOGzJ07V6fTtfX2urq6p556yru5Zs2a3/zmN95Nh8MRHR3dA1UDAEBw4t9etNls8fHxmZmZq1atavlqfn7+c889V1ZWFhUVFcjZNBr+3xEAAPRdan++OHLkSI/H8+KLL/IuBAAA+gX+91GZtLS0tLQ0o9FIRKGhoRMmTCCiqqqq/fv38y4NAAD6EbXkol6vj4iIqK2tdblcRFRUVOR9SavVLlu2jF9pAADQj6glFx9//HHv80VFUWpqarwvjRs3rp1+NwAAAN2Ify4OHz6ciM6fP+/do9PpOjdmAwAAoIv497sJDw8vLCwsKipyOp28awEAgP5OLaMaFEVhoxWTk5O7ch6M0wAAgK4IthRBLgIAQFfwv48KAACgHshFAACAZshFAACAZshFAACAZshFAACAZvzH9TOKohQUFBw8eDA0NNRisbDNKy4yBQAA0L1U0V50Op1jxoxJS0uzWq1shWGdTrdq1aohQ4aMGTMG4/0BAKDXqKK9+Nhjj3k8HoPB4Lc/OTn55MmTCQkJdrs9PDycS20AANCv8G8vOp1Ou91eWFh49OhRSZL8Xp00aZLH4ykoKOBSGwBA8Pnb3/6Wl5fHuwr14t9ebGxsNBgMbU3/duHCBSL68MMPe7coAIAgdOzYMUmSXn/9dbb5xBNP8K1HnfjnIltPoy1bt24lotDQ0F6qBgAgGP3lL3+RZZl9ohLR0qVLEYpt4X8fNTw8XKfTtdq5Jj8/ny1QPGvWrN4uCwAgKBw9evSRRx6ZMGECC0Wz2XzixIlXX32Vd13qxb+9SESZmZlz5sx5/PHHhwwZoiiKzWY7derUli1brFYrERmNxi4usgEA0A8dPnxYkqQdO3awzWXLlomiiD6MV6SW1SecTuecOXNcLpfffrPZ/N///d+BD2HEehrQRymKct111xmNxtLSUt61QJ9ns9lkWX7zzTfZpiAIgiDcdNNNfKvqK1TRXiSiqKio2tpam81WUVHB9gwZMmTq1Kn40wZ6U1JSktVq5fKnVU1NDRHdcccdvX/pANlstvj4+MzMzFWrVvGuBdp06NAhSZLeeustIhowYIAgCKIojhgxgnddfUoTb/X19Q6Ho61Xy8vLO3Q2NXxH0HcRkclk4nLpzMxMInK5XFyu7lVfX09EmZmZLV9iFbbzrxX4+vOf/zxjxgz2wT5w4MC0tLS///3vvIvqk/j3u6mpqUlLS2vr1cGDByclJSmK0pslQf9ks9mIaNmyZQEen5SUlJSU1F1XP3jwoNFo5H6D5MiRI0Q0adKkli+xCqOionq9KLgCq9X6y1/+8v7779+3b98111yTkZFx6tSp3/72t0OHDuVdWp/EPxfbFxUVpSjK888/z7sQCH4VFRV6vT4uLo7L1SsrKxctWtTqSxqNJisrq3fKOH78OBG1+kOwWq1tVQi8lJSUTJ06NSkpqbS0NCQk5D//8z9Pnz69du3a6667jndpfRif54tut3vXrl3s67q6utra2rb+2VdVVdntdkwdDr2gqqrqmWee4XJpNk6p1X7XrBXba1ijsOV+p9Op1WrRM1w99u7dK8tyWVkZEYWFhbGeNYMHD+ZdV1DgdQPX5XKZzeYAiywuLg7wtBy/I+gE9r+BVqtt+Utv9RFXT1w0PT2d7TcajfX19YGfx2g0Go3GDl03PT29Zeq4XK7y8nJvGb7S09P9fjjeKxYWFnpPZTQavY/90tPT2U6Hw5GZmanX69kB7Ty5rK+vz8zM9J2gWK/Xm81m37cUFxf33G8EOuRPf/pTfHw8+01df/3169ev//rrr3kXFVQ4p4jD4dBqtXq9PrNtHXrOj1zsW4qLi81mM0sj3w/9dgTyh1Q7b2f/y5lMJpfLVV9fr9frO93RpkO5WFhYSERms9nhcLhcLq1WG+D/2OXl5S3/StDr9d4zsDP7fhcsGs1mM+u21vIAX+wHYjAYiouLHQ4HERUWFpaXl2u1Wq1Wy70fEPjasWPHXXfdxf4nHzZsWGZm5vfff8+7qCDEP0UcDkeH/uhuH3Kx7wowF7uivr6eZYB3j9Fo7HQzKPBcLC4uJqK8vDzvHtYgC+S9reaibzOXnc23EtZxtLCw0LtHq9W2WipLaIPBwP40YXNJsyxkNbfaioXet3379tjYWJaIN9544yuvvHL58mXeRQUt/uMXo6KicnJy2jnA7XZXVlbiwQZ03a5duzwez5o1a7x7OjSIXqPRXHFnU2st2hUrVhiNxpSUFO8erVbrdrsDv7Qfv6tERESwyaF83Xjjjd6vY2NjWx5ARC+//LLH4ykqKmKP8MvKyvR6PesTO23aNMKU/Sqwbds2SZKqqqqIaPTo0aIorlixgndRQU4V/VHb75teWVm5ZcuW3qoFgtnu3bu1Wi37xO8Evz8qW20vtnyX0+l0uVx+PTntdnvnavCyWCzJyckxMTEajabVzAvwJL6DQ/bv328ymdjXLLa5jxvpz7Zs2RIdHf2rX/2qqqoqIiJiw4YNn376KUKxF/BvLzIWi+XYsWOt/nFaWVnpvYEA0GqjzU+r+UREVqu11c6WPaqxsZF+2HorKSmhLkSOoihs3ORrr73GRhOyaXo6cSqPx+P92ul0ejyeu+++m21WVlYS0T333NO5IqErCgoKJEmqrq4moltvvVUURd+bDdDTVJGLqampubm5vKuAvqGtzOtDsrOziWjlypWBv+X8+fPer3ft2mW328vLy71D7GtraztXiV6vr62tVRRFp9MdPnyYiCZOnEhETqczNTW1nYVRoYfk5+dLknTixAkiioyMFEVxyZIlvIvqd/jfR3U6nbm5uVqtNj09vbi4uPyHiouLfbuPQxDTarXsM9pisfTQoD2TyVRZWckGC7rd7tTU1F4YLz9u3DitVrt9+3ZFURRFSU1NtVqthYWFAbYX4+LitFptUVGRoihOpzMjI2PIkCFE9L//+79E5Ha7MzIy2JHeaaFYiLI1vRkWnC3njcrOzna5XE8++aTb7S4rK2P/1iwWS0JCgl6vxwzmvWnjxo1jxox54oknTpw4ERUV9frrrx8/fhyhyEdvdO5pF+tu184IxfLy8sC7KarhO4LOKSwsZGP1vCM3ul19fb33+ZnBYPDtsdkJgfdHdTgc3j/vjEZj4ONxmZY/Ge8gRZPJxHp0E5Fer2/6d59SIvIO5GBDGL0H+CkvL/f+TLwV+nadhZ72+9//fvTo0eyHP2HChP/5n//hXVF/p4pVmcLCwvbu3dvW/FuKopw6dSrAWRmxzhT0GvaQLzgaVW63W6/X5+Xl4TlWr2lqapIkSZblzz//nIhiY2MFQXj44Yd51wXqeL64bdu27du3t5WLp06d2rFjB2YrBrUJjkRkWC+bO++8k3ch/cKlS5dYIp45c4aIJk2aJAjCvHnzeNcF/6KKXJw2bdqFCxdYv/OWr+7YsQODqAB61LFjx4gIf332BK1WO3bs2ClTpphMpltvvVWWZUmSvvzySyKKj48XRXH27Nm8a4Qf4H/X0el0RkdHt39M4IuY4z4qQCfExMTodLpgagGrh+/Ioquvvvr7778nooSEBEEQHnjggZ6+OlaT7gT+/VGjoqK8/QIAgIujR48iFHvI8uXLf/GLX/zoRz8iou+///7aa6994403Dh482I2hqChKW4uRVVRUEFHvD9vt0/jnIhE988wz7UzD6O16BwDQh9TX169evXrz5s1//etf//nPf8bGxo4ePfqrr75KS0v76KOPuvFCWE26e6kiF+fOnTt+/Pi2Xn3ooYfuuOOO3qwHAKArzp49++yzz954443r1q376quvZsyY8ec///nIkSM1NTUrV678+9//PnXq1G+//ba7LofVpLuX2p/GOZ3O/Pz89icW94XniwDA0enTp1nPmsuXLxPRrFmzBEGYPHmy7zGlpaUzZ8586aWXBEHolou2NWTI6XQmJCScO3euW67Sf6grRRRFqamp8du5aNGitWvXBjgfFXIRALg4efIkG33BNufMmSOKone+WT/PPfecxWL55JNPfvzjTg4KUBSloKBg586d3jno9Xp9YmLiypUrvVMplZSUHD9+HD1uOqwX5g64IofD0X7XG8x3AwCq5XK5li9f7v28MplMH3zwQftvuXTpUnR09Ouvv965K2I16R6lihRpPxQ7NF8XchEAes2JEyfMZrP3w2r+/PlHjx4N8L3Hjh2bNWtWJy6K1aR7Gv9x/Wx1uvLy8ri4OEVRJk6ceOTIEbZKKhFlZWWNGjUKk/oDgKrU1NRIkrRp0ya2uXDhQlEUrzgU29dtt93WuUtjNemexr8/amNjo9FoZD2pdDpdYmLigQMHvK+uWrVq9erVXVnZHACgGx07dmzJkiU///nPWSguXrz4r3/96xtvvNGhUGTYql4dhdWkexr/XKQfLn+zcuXK1atX++6JiIh4+eWXedQFANDM4XA8+uijv/jFLzZv3kxES5cu/dvf/lZQUNDOMLP2dW7ZZ6wm3dP452JcXJzL5crKyrLZbG63Ozw8PDEx8cknn2TRaLFYrFYr2osAwJHdbn/kkUduv/32rVu3EpHZbD5x4sSrr746bty4rpz26quv7sS7vKtJExFWk+4RvB9wNjX5rBjH+p2yp8q+RWZmZgZ4KpV8RwAQHD744APf9SmXL1/ejb09O7cCKOtcYzKZXC6XyWRiHXDYIp3ezjjQFWpJkeLiYt/1Wn1HbnRolVrkIgB0C5vNNmfOHG8iCoLw2Wefde8lNm3a1Lk3YjXpHhVso+Axrh8AuujQoUOyLO/Zs4eIBgwYIIqiIAgjRozo3qv83//93zPPPCNJUqfPgNWkewj/54tOpzMjI6OtV/Pz80tKSnqzHgDot955552ZM2dOmTJlz549AwcOfPbZZ0+fPv3SSy91eygS0bZt27p4Bqwm3UP4j19sbGxsZ7RNSkpKTEwM/XtcDgBAT9i/f78kSWyK0WuvvVYQBFEUvQOpe8Lvf//7tLS0rpwBq0n3EP652D426j87Oxu5CAA9oaSkRJZlNmw6JCSE3TUNDQ3t0YuKonjx4sW5c+d25ST79+/Hwoo9gU8uut3ul19+OTc317vHd0nrljBMFQC63dtvvy1JUllZGRGFhYWxRBw0aFBPX1cURVmWc3NzOz1pOHP06NHuKgl+gGOfH9bJ+IoVmkwm9EcFgG70pz/9yTv4/YYbbli/fv0333zTo1dsbGxsamo6c+YMWw1x7NixPX1F6DT+vTdTU1PdbnfLlcM6B/1RAaAdO3fulGW5oqKCiIYNG8baiFdddVWPXtRmsxUVFf34xz/Oy8v79ttvx44dW1ZW9rOf/axHLwqdpooUycjIeOihh7rl6TFyEQBaZbFYJElifThHjhzJeta0/wSnW3z00UcxMTEXL15kmwhF9eOfIoqijBkzxuPxOByOrkcjchEA/Gzbtk2WZdbv/eabbxYEYcWKFb129YSEhHfffZeIfvazn6WlpT3xxBM/+clPeu3q0An8+6PW1NR4PB6tVjt48GDetQBAUHnjjTckSXI6nUQUEREhimJqamo7xzc0NARy2kAO8x6zevXq8+fP33DDDf/1X/919dVXf/TRR50+VTdW1Y5Zs2aNHj06kCsGK1W0rmJiYhITE9etW9fqq06nc8eOHW296gftRQAgooKCAkmSqquriWjs2LGCIJw5c2bNmjW86+oDXn/9ddY5qN/i314kotLS0ieffLKkpKTVQYpWqxXLbAJAgPLz82VZZs2yyMhIURSXLFlCRLIsX/G9AQ5bDOSwvnuqft5YJDW0F51OJ5v0obKyUq/X+00wUVtb63K5jEZjgB1W0V4E6LdycnIkSaqtrSWiqKgoURQfffRR3kVB38O/vRgVFVVZWclW2rTb7bzLAYC+Jzs7W5blTz/9lIjuuOMOQRAWLFjAuyjoq/jnIhGZzWaXy7Vs2bJWX92wYUOAj50BoF9pamqSJEmW5c8//5yIYmNjRVHEqrzQRarIxSVLlhw4cCAuLq6tA9auXdub9QCAyl26dEmWZUmSzpw5Q0STJk0SBGHevHm864JgEGxP4/B8ESC4ffvtt6yN+I9//IOI7rnnHkEQZs+ezbsuCB6qaC8ybre7oKDgww8/tFqtRqMxPDw8JSUFS6gAAHPx4kWWiOfOnSOihIQEURRnzpzJuy4INmppXVkslocffrjlfpPJtHHjxsBXQUN7ESD4NDQ0sLumFy5cIKKpU6cKgoC156CHqCJFSkpKpk+fTkR6vd5kMg0ZMoTtP3/+fG5ubmxsbOCziiMXAYKJoiisjfjVV18RUVJSkiiKiYmJvOuCYKaKFImIiDh37tzevXtbdr1RFCUpKWnNmjUB/m2IXAQIDmfPnmVtxO+++46IZsyYIQjCfffdx7suCH78U8TpdEZHR7czaXhJScm+fftycnICORtyEaCvO336NEvEy5cvE9GsWbMEQZg8eTLvuqC/4N/vprGx0Wg0ttO/JiQkxO1292ZJAMDFyZMn2V1TtjlnzhxRFO+++26uRUG/wz8Xhw8frihKOwds2LAhwOkBAaCPcrvdsiz/4Q9/YJsmk0kQhDvvvJNvVdA//Yh3ARQeHu7xeCwWS8uX3G53cnJyUVHRrFmzer0uAOgNH3/8cWpqql6vZ6E4f/78o0ePWiwWhCLwooqncTabLT4+3mg03nvvvbfddtuFCxdOnjxZVVVVVFRERAaD4ejRowGeCs8XAfqKmpoaSZI2bdrENhcuXCiKYnR0NNeiANSRi0RUUlKyYMECNnu4L4PBUFpaivGLAMHk2LFjsixv3ryZbS5evFgQhPHjx/OtCoBRUYooirJr167du3dXVlaGhYUZDIZZs2Z1dApg5CKAmjkcDkmStm7dyjaXLl0qiuK4ceP4VgXgK9hSBLkIoE52u12SpO3bt7NNs9ksiuKYMWP4VgXQEv/+qK1SFOX8+fPh4eG8CwGArjp8+LAsy6y7ABEtX75cEAT86wbV4t8flcnIyNBoNBkZGd49lZWVSUlJJSUlHKsCgK54//33586de9ddd7FQFAThs88+y87ORiiCmqnirmNGRsb69euJyGQy+Q7YUBRlzJgxL774YkpKSoCnwn1UADU4dOiQLMt79uwhogEDBoiiKIri8OHDedcFcGX8U0RRlOuuu44N0pg7d67fH5L5+flPPPFEeXl5O6sW+0IuAvD1zjvvyLK8b98+Iho4cKAgCKIoDh06lHddAIHi/3yxpqZGr9e3tWJGZGQkEW3fvj3AXAQAXvbv3y9JEvu3fM0117A2YuCDrABUgn8uElFERERbL506dYqIMD8qgJqVlJTIsnzgwAEiCgkJYYnoXTAOoG/hn4txcXGVlZVut7vlo3hFUVavXk1EeEoPoE579+6VZbmsrIyIwsLC2F3TQYMG8a4LoPNU0R/12WefTUxMtNls3j2KolgsljFjxrhcLiIKvN8NAPSO3bt333PPPQ8++GBZWdn111+/fv3606dPP//88whF6Ov4txeJaNWqVXV1dfHx8URkNBpra2tZHDKFhYXtrEIFAL1s586dsixXVFQQ0bBhw0RRFAThqquu4l0XQPdQUe9Ni8Xyyiuv2O127x6TyfTcc891KBTRHxWg51gsFkmSKisriWjkyJHsrqlGo+FdF0B3UmOKOJ3OG2+8sXPd2JCLAD1h27ZtkiRVVVUR0ejRo0VRXLFiBe+iAHpEsKUIchGge23ZskWWZafTSUQRERGiKKampvIuCqAHqeL5IgCoUEFBgSRJ1dXVRHTrrbeKoogecNAfIBcBwF9+fr4syx999BERRUZGiqK4ZMkS3kUB9BLkIgA027hxoyzLtbW1RBQVFSUIwqJFi3gXBdCrkIsAQESUnZ0tSVJdXR0RTZgwQRTFBQsW8C4KgAPkIkC/1tTUJEmSLMuff/45EcXGxoqimJyczLsuAG6QiwD91KVLl2RZliTpzJkzRDRp0iRBEObNm8e7LgDOVJSLbre7oKDgww8/tFqtRqMxPDw8JSUFM90AdLtvvvmGJeKXX35JRPHx8aIozp49m3ddAKqgltF+Fovl4YcfbrnfZDJt3Lgx8DH+GL8I0I6LFy+yu6bnzp0jooSEBFEUZ86cybsuABVRRYqUlJRMnz6diPR6vclk8i5Pc/78+dzc3NjY2LZWZ2wJuQjQqoaGBtZGvHDhAhFNnTpVEIRp06bxrgtAdVSRIhEREefOndu7d2/LxYcVRUlKSlqzZk2A/4CRiwB+6uvrZVmWZfmrr74ioqSkJFEUExMTedcFoFL8U8TpdEZHRzscjrYeJZaUlOzbty8nJyeQsyEXAbzOnj3L7pp+9913RDRjxgxRFO+9917edQGoGv9+N42NjUajsZ3+NSEhIW63uzdLAujrTp8+ze6aXr58mYgefPBBURQnT57Muy6APoB/Lg4fPlxRlHYO2LBhQ2hoaG+VA9C3nTx5krUR2eacOXNEUbz77ru5FgXQl/yIdwEUHh7u8XgsFkvLl9xud3JyclFR0axZs3q9LoA+xu12r1ix4qabbmKhaDKZDh8+vGvXLoQiQIeo4mmczWaLj483Go333nvvbbfdduHChZMnT1ZVVRUVFRGRwWA4evRogKfC80Xohz7++GNZlnNzc9nm/PnzRVE0GAx8qwLoo9SSIiUlJQsWLPB4PH77DQZDaWkpxi8CtKqmpkaSpE2bNrHNhQsXiqIYHR3NtSiAvk1FKaIoyq5du3bv3l1ZWRkWFmYwGGbNmtXReRqRi9BPHDt2TJblzZs3s83FixeLonjbbbfxrQogCARbiiAXIeg5HA5JkrZu3co2ly5dKoriuHHj+FYFEDT497ux2WxJSUktR2K43e6srKzk5OSkpKT8/HwutQGoit1uf+SRR26//XYWimaz+eOPP3711VcRigDdiH/rinW60Wq127Zta3VSm+Tk5IaGhgCngkN7EYLS4cOHZVlmPdGIaPny5YIghIeH860KICjxby8yHo9n+vTpqampLccyLlu2jEtJAGrw/vvvz50796677mKhKAjCZ599lp2djVAE6CGqyEWj0VhcXKzVanNzcydOnOh0OnlXBMDfoUOHZs+eHRcX9+abbw4YMGDlypWnT5+WJGnUqFG8SwMIZqrIRSKaNm2a3W43Go0ulys6OjorK4t3RQDcvPPOOzNnzpwyZcqePXsGDhz47LPPnj59+qWXXho+fDjv0gCCn1pykYjCw8NLS0szMzOJKC0trdXOOADBbf/+/b/85S/vv//+ffv2XXPNNRkZGadPn37xxReHDh3KuzSA/kJFucisWrXK4XAYDAar1WowGEpKSnhXBNAbSkpKEhMTjUZjaWlpSEjIb37zmy+++GLt2rWBT2oBAN2C/7zhLUVFRZWWlv7ud79bv3799OnTDQYDPhogiL399tuSJJWVlRFRWFiYKIqCIAwaNIh3XQD9lCrai1ar1W/ecJ1Ot27dOtYZx2638yoMoEft3r37nnvueeCBB8rKyq6//vr169efPn169erVCEUAjviP9nO73bt27SKiUaNGtZz1TVGUJ598EuMXIcjs3LlTluWKigoiGjZsGGsjXnXVVbzrAgAV5CIR2Wy26urqlJSUtg5wOp3tLFzsC7kIKmexWCRJqqysJKKRI0cKgiCKokaj4V0XAPwL/xRxu916vZ6IysvL4+Liung25CKo1rZt2yRJqqqqIqLRo0eLorhixQreRQGAP/79bhobG4lIr9djjkcIVm+88YYkSWzCioiICFEUU1NTeRcFAK3jn4tRUVFms1mr1bbV6dRms61duzbA54sAqlJQUCBJUnV1NRGNHTtWEIR2nhcAgBqooj9qTk7OkCFDsrKyWk6O6na7N2zYwKUqgK7Iz88fN27cY489Vl1dHRkZ+dprr9XU1CAUAdSP/9M4p9N5xeXF2WDnQM6G54vAXU5OjiRJtbW1RBQVFSWK4qOPPsq7KAAIlCruo+r1epfLxbsQgK7Kzs6WJKmuro6IJkyYIIriggULeBcFAB2jivuozzzzTGZmZlMb2IypAKrV1NT0u9/9btSoUU899VRdXV1sbGxhYeGHH36IUAToi/i3F4lo7ty5Bw4caOtVo9F4/vz53qwHIECXLl2SZVmSpDNnzhDRpEmTBEGYN28e77oAoPNU9zTO7XZ3ZcFVPF+E3vHtt99KkiRJ0pdffklE8fHxoijOnj2bd10A0FWquI9KRDabLSkpSaPRsHFdiqJkZWWlpqbabDbepQH8wMWLF9euXTtixIj09PQvv/wyISFh79697733HkIRIDio4j5qSUnJ9OnTfffodLpVq1Y5nc6EhIScnJyW86YC9L7z58+zNuKFCxeIaOrUqYIgTJs2jXddANCdVHHXMSwsjIjMZrPH43G73b5DMiwWy8MPPxz4FHG4jwo9QVEUlohff/01ESUlJYmimJiYyLsuAOh+/NuLNpvN4/E4HI6oqCg2tY3vqzfeeCMRbd++vetTpwJ0wtmzZ1nPmu+++46IZsyYIQjCfffdx7suAOgp/HORiIxGY1vLZZw6dYqI3G5371YEQF988QVrI16+fJmIZs2aJQjC5MmTedcFAD2Lfy6OGzeOzQzSqldeeYWIutJDFaCjTp48KUmSLMtsc86cOaIo3n333VyLAoBewr8/qk6nS0xMtFgsfvsVRUlOTrbb7UQ0f/58HqVBv+N2u1esWHHTTTexUDSZTB988MGuXbsQigD9hyp6qSiKkpSUpNPpwsPD9+/f//jjj9fV1VksFo/HQ0Tp6enr1q0L8FTodwOd88knn0iSlJubyzbnz58viqLBYOBbFQD0PrWkiKIozz//vPdTidHr9WvXru3QIA3kInRUTU2NJEmbNm1imwsXLhRF8Ypz2QNAsFJdingH8g8ePLitzjjtQC5C4I4fPy5J0ubNm9nm4sWLBUEYP34836oAgK8+kCIlJSWBD51GLkIgHA6HJElbt25lm0uXLhVFcdy4cXyrAgA1UHuKKIoyceLEdjqs+kEuQvvsdrskSdu3b2ebZrNZEIRbbrmFb1UAoB78x2k4nc60tLS2XrVarURks9kwrh+66MiRI5IkFRUVsc3ly5cLgoAhQADgh38uNjY2svBrx4YNG5CL0Gnvv/++JElvvvkm2xQEQRTFUaNG8a0KANSJfy4yxcXFISEhfjsvXLiQnZ29evXqwYMHc6kK+rpDhw5JkvTWW28R0YABA0RRFARhxIgRvOsCAPVSRS4ajca2etaEhIRs3749Jyenl0uCvu7gwYOSJO3bt4+IBg4cyNqIQ4cO5V0XAKhdH+ilEhMT8/TTTwc4ihH9bmD//v2SJLFVWa699lpBEARBuO6663jXBQB9Qx9IkZiYGJ1O57v4VDuQi/1ZSUmJLMsHDhwgopCQEHbXNDQ0lHddANCX8L+PqihKTU1NW69u377dbrebTKbeLAn6nLfffluSpLKyMiIKCwtjd00HDRrEuy4A6Hv452JNTU18fHz7xyxbtqx3ioE+Z/fu3ZIklZeXE9H111/P2og//elPedcFAH0Vh1xkAxYXLVrk+8hQq9XGxsa2PDg8PHz+/PkYpAEt7dy5U5bliooKIho2bBhLxKuuuop3XQDQt3HIxTlz5rhcrtDQUG8u6vX6I0eO6HS63i8G+iKLxSJJUmVlJRGNHDmS3TXVaDS86wKAYNDbueh0Ol0ul8lk2rhxI9szePBgk8mEUIRAbNu2TZKkqqoqIho9erQoiitWrOBdFAAEld5el7ixsVGv11ssFm8QNjY2fvjhh+28xel0ZmRk9Ep1oF5btmyJjo7+1a9+VVVVFRERsWHDhk8//RShCADdrrfbi+PGjdNqtR16yxWDE4JbQUGBJEnV1dVENHbsWEEQUlJSeBcFAEGrt3NRp9PFxMRkZWVNmjSJ7amurlYUxbvsYkuiKOIua/+Un58vSdKJEyeIKDIyUhTFJUuW8C4KAIIch1HwiqIkJSXZ7fbA32I0GjGuv1/JycmRJImtLxYVFSUIwqJFi3gXBQD9Aof+qDqd7ujRoxaLZcuWLUSkKIrL5Wp1kAb9e50p6D+ys7MlSaqrqyOiCRMmiKK4YMEC3kUBQD/Cv3Vls9nWrl3bTnMwNTXV7XajvRjcmpqaJEmSZfnzzz8notjYWFEUA5wUFwCgG/V2f9ROmD9/Pu8SoAddunTppZdeGjFixNNPP/35559PmjRpx44dR44cQSgCABfB1rpCe7EP+fbbbyVJkiTpyy+/JKL4+HhRFGfPns27LgDo1/jPjwr90MWLF9ld03PnzhFRQkKCIAgPPPAA77oAAFSQi77raQwePDgqKoqILBZLamqqx+PR6/XZ2dltrVoMfc758+dZG/HChQtENHXqVEEQ8PsFAPXgf9dRUZSJEye6XC6z2ZySkhIVFWWz2dgKGwaDgYjsdrvL5QoPDw/kbLiPqlqKorBE/Prrr4koKSlJFMXExETedQEA/IAqUiQsLGzv3r3eRTOSkpKsVmtmZuaqVauIKCsrq66uLicnJ5BTIRdV6OzZs+yu6XfffUdEM2bMEAThvvvu410XAEAr+N9HdTqder3eG4o2m81qter1ehaKRDRp0qSDBw/yKxA674svvmBtxMuXLxPRrFmzBEGYPHky77oAANrEPxcbGxt9p3lbu3at97/MqVOnOJQFXXPy5EnWRmSbc+bMEUXx7rvv5loUAMCV8R+/OG7cuMrKSqfTSURZWVlWq9VgMPiOXXvllVcCfLgIauB2u1esWHHTTTexUDSZTB988MGuXbsQigDQJ/BvL+p0upycnOjoaLap1Wpfe+019rXb7U5NTbXb7fPmzeNWHwTsk08+kSQpNzeXbc6fP18URdZ5CgCgr1BLLxWn08mmQp07dy5rHbrd7l27drFXR40aFeDsJ+h3w0VNTY0kSZs2bWKbCxcuFEXR+7cOAEAfEmwpglzsZceOHZNlefPmzWxz8eLFgiCMHz+eb1UAAJ3G/z5qW9xu94EDB+bOnYvFF9XJ4XBIkrR161a2uXTpUlEUx40bx7cqAIAu4pCL3gluKioq2rlBGh4eHhkZOWbMmMTExIULF2JKFPWw2+2SJG3fvp1tms1mQRBuueUWvlUBAHQLDncd2XQ2BoNhzZo1EydObL85qCjKmDFjYmNjsc6UGhw+fFiW5aKiIra5fPlyQRDQWxgAggmfcRparba0tHTatGk6nc7tdmdkZERERGg0Go1GExERkZ+f7z1Sp9O9+OKLXIoEX++///7cuXPvuusuFoqCIHz22WfZ2dkIRQAIMnxyMTY21ttMDA8PX7duXW1trclk0mq1R44cSUlJ8T04MjKSR43wL4cOHZo9e3ZcXNybb745YMCAlStXnjp1SpKkUaNG8S4NAKD7qajfzbJlyxoaGtDLRj3eeecdWZb37dtHRAMHDhRFURCEoUOH8q4LAKAHqSgXQT32798vSRJ7pnvttdcKgiCKIv5kAYD+ALkIP1BSUiLL8oEDB4goJCSEtRFDQ0N51wUA0EuQi/Avb7/9tiRJZWVlRBQWFsbaiIMGDeJdFwBAr+KTi4qi2Gw2v53V1dWt7veOk4Mesnv3blmW33vvPSK64YYbWCL+5Cc/4V0XAAAHfHLRbrfHx8e3+lKr+41GYw9X1E/t3LlTluWKigoiGjZsGLtretVVV/GuCwCAG9xH7acsFoskSZWVlUQ0cuRI1kbUaDS86wIA4IxbLhYXF4eEhARy5IYNGxoaGnq4nH5k27Ztsix/+OGHRHTzzTcLgrBixQreRQEAqAWfXDQajYHPd3rhwoXs7OweraefeOONNyRJYktAR0REiKKYmprKuygAAHXhkIvDhw9ftGhR4MePHTu2Q8dDSwUFBZIkVVdXE9HYsWMFQfCbVAgAAJhgm2Ub84b7yc/Pl2X5o48+IqLIyEhRFJcsWcK7KAAA9UK/m6CVk5MjSVJtbS0RRUVFiaL46KOP8i4KAEDtkItBKDs7W5blTz/9lIjuuOMOQRAWLFjAuygAgL4BuRg8mpqaJEmSZfnzzz8notjYWFEU21r2GQAAWoVcDAaXLl2SZVmSpDNnzhDRpEmTBEGYN28e77oAAPoe5GLf9u2337I24j/+8Q8iuueeewRBmD17Nu+6AAD6KuRiX3Xx4kXWRjx37hwRJSQkiKI4c+ZM3nUBAPRtyMW+p6GhgSXihQsXiGjq1KmCIAQ+TwIAALQDudiXKIrC7pp+9dVXRJSUlCSKYmJiIu+6AACCB3Kxbzh79ixrI3733XdENGPGDEEQ7rvvPt51AQAEG+Si2p0+fZol4uXLl4lo1qxZgiBMnjyZd10AAMEJuaheJ0+eZHdN2eacOXNEUbz77ru5FgUAEOSQi2rkdrtlWf7DH/7ANk0mkyAId955J9+qAAD6A+Siunz88ceyLOfm5rLN+fPni6JoMBj4VgUA0H8gF9WipqZGkqRNmzaxzYULF4qiGB0dzbUoAIB+B7nI37Fjx2RZ3rx5M9tcvHixIAjjx4/nWxUAQP+EXOTJ4XBIkrR161a2uXTpUlEUx40bx7cqAID+DLnIh91ulyRp+/btbNNsNguCcMstt/CtCgAAkIu97fDhw7IsFxUVsc3ly5cLghAeHs63KgAAYJCLvef999+XJOnNN99km4IgiKI4atQovlUBAIAv5GJvOHTokCzLe/bsIaIBAwaIoigIwogRI3jXBQAA/pCLPeudd96RZXnfvn1ENHDgQNZGHDp0KO+6AACgdcjFnrJ//35JkkpLS4no2muvFQRBEITrrruOd10AANAe5GL3KykpkWX5wIEDRBQSEsLumoaGhvKuCwAArgy52J327t0ry3JZWRkRhYWFsbumgwYN4l0XAAAECrnYPXbv3i1JUnl5ORFdf/31rI3405/+lHddAADQMcjFrtq5c6csyxUVFUQ0bNgw1ka86qqreNcFAACdgVzsvMLCQlmWKysriWjkyJEsETUaDe+6AACg85CLnbFt2zZJkqqqqoho9OjRoiiuWLGCd1EAANANkIsds2XLFlmWnU4nEUVERAiC8OSTT/IuCgAAug1yMVAFBQWSJFVXVxPRrbfeKopiSkoK76IAAKCbIRevLD8/X5KkEydOEFFkZKQoikuWLOFdFAAA9AjkYns2btwoy3JtbS0RRUVFCYKwaNEi3kUBAEAPQi62Ljs7W5Kkuro6IpowYYIoigsWLOBdFAAA9Djk4g/885//lGVZkqRTp04RUWxsrCAIDz/8MO+6AACglyAX/+XSpUuSJMmyfObMGSK66667RFGcN28e77oAAKBXIRfpm2++YW3EL7/8koji4+NFUZw9ezbvugAAgIN+nYuNjY2yLMuyfO7cOSJKSEgQBOGBBx7gXRcAAHDTT3OxoaGB3TW9cOECEd1///2iKE6bNo13XQAAwFm/y8X6+np21/Trr78moqSkJEEQjEYj77oAAEAV+lEunj17lrURv/vuOyKaMWOGIAj33Xcf77oAAEBF+kUunj59miXi5cuXiejBBx8URXHy5Mm86wIAANUJ8lz87LPPWM8atjlnzhxBEOLi4rgWBQAA6hW0ueh2uyVJ2rBhA9t86KGHRFG88847+VYFAAAqp4pcfOGFF7rx+I8//liSpLy8PLY5f/58QRBiYmI6Wx0AAPQjmqamJr4VvPDCC2vWrOnQW44fPx4ZGdnqSxqNxvv1woULBUG4/fbbu1QfAAD0J/zbix1tLBJRW6Ho9etf/1oUxfHjx3eyJgAA6K/4txdb5XA49uzZM2XKlClTpnTojRqNprq6+uc//3nP1AUAAEHuR7wLaN277767Zs2at956qxPvRSgCAECnqTQXAQAAuEAuAgAANFNpLjY0NBDRkCFDeBcCAAD9i0pzEQAAgAuV5uL58+eJKDQ0lHchAADQv6g0FwEAALhQaS6y54toLwIAQC9TaS4CAABwgVwEAABoxjkXY2JifGf69sJ9VAAA4IJzLtrtdoPBwLcGAAAAL565aLPZiOjpp5/mWAMAAIAvnrlYUVGh1WqnTp3a8iXcRwUAAC545mJVVVVycrJOp+NYAwAAgC+e6xLv37+/rKys1ZfQXgQAAC56qb1osVhY11ONRhMREeF0OhVFiY2NjYqK6p0CAAAAAtEbuZiampqamvr00083NTXl5eW5XC4i0ul0paWlbb0F7UUAAOCix++jZmVl5ebmFhcXT5s2jYgiIyOJCM1EAABQJ01TU1OPXiAsLEyv1x89erRD77r55pvr6uo+/fTT0aNHd+iNGk2Pf0cAABDEevY+qs1m83g8jz32WEffiPuoAADARc/mYkVFBf373ikAAID6qXTecLQXAQCAi57NRaPRSETbt29nm2y0hqIoPXpRAACATuvZXIyKiiosLNy/f79GowkLC3vvvfeKioquOMENaywCAAD0PjX23mxoaNBqtaGhoR6Pp6PvRX9UAADoCjU+X8TDRQAA4EWNuQgAAMALchEAAKCZGnMR91EBAIAXNeYiAAAAL8hFAACAZmrMRdxHBQAAXtSYiwAAALyoMRfRXgQAAF7UmIsAAAC8qDEX0V4EAIBu4XA4OvoWNeYiAABAt4iOjr799ttFUQz8LchFAAAIZrt375ZlWaPRBJiOqlh94oUXXvDdPHz4sNVqvfPOO9nyjVc83hfW0wAAAD+iKMqyzL4WBEGSpHYO5p8iL7zwwpo1azr0luPHj0dGRrb6EnIRAABauv32232fNbaTjqpIkZbtv/a73rTTXpwyZcqhQ4e6qS4AAAhaoaGhf/nLX0aPHu23XxW5CAAA0HMaGhpmz5797rvvss3Q0NCnnnpKEIRWW18/7s3KAAAAet+WLVtYKLafiAzaiwAAEMwcDkdCQgIRXTERGeQiAAAErYaGhl//+tdRUVGBJCKDXAQAgKDViQnUkIsAAADNMN8NAABAM+QiAABAM+QiAABAM+QiAABAM+QiAABAM+QiAABAM+QiAABAM+QiAABAM+QiAABAM+QiAABAM+QiAABAM+QiAABAM+QiAABAM+QiQG9wu92pqalhYWEajSYmJqakpIR3Rf2U2+3OyMgICwuz2Wy8awGVQi4C/IAmAElJSR06p9PpNBgM8+fPP3fuXF5ent1unz59utPp7KFvAdqSn5+fnp6+fv16j8fTLSdMSkoKCwvDrzLIIBcBfqCpqcnlcun1eiIyGo1NP1RfX282mzt6zrS0tNjY2Li4OCJKSUkxm81arXbw4MHdXz20KyUlxWKxdOMJrVarx+OxWq3deE7gDrkI4C88PDwiIqLVl3Q6XU5OjqIogZ/N6XT6fW7m5OScO3cuPDy8S1WCCmi1WiKaNGkS70KgOyEXATosJiYm8IMbGxt7rhLgKzY2loiGDx/OuxDoTshFgA7LycnhXQKowr333qvVatH0DzLIRYCOycrKarnH29E0IyMjOTnZu1+j0cTHxxOR1Wr19tlp2X+HHcn49ZP07cgaERGRn5/vfUlRFIvFEhMTk5WVpSgKOzMrr51OQ74P2EpKSrz1xMTEXPHZm+8ViSg/Pz8iIoJ9Iy3vLTudzuTkZG/lrMhAivd2GWWHpaamajSasLCwjIwM9l6bzRYTE8NO61czO55dVKPRJCcnd6VTTH5+vu/vq2Xfq1GjRrEmIwSVJgBowWg0Umv9boqLizMzM333pKenGwwGl8vV1NRUXl5uMBj83lVeXt7yVCaTyW+nt7NPeXm5d6fD4dDr9cXFxewAg8FAROnp6WyT9d8hoszMTKPRyN7O/lFrtVpWUjtXZG9nl/Oe3Gw2t/Uz8bui2Ww2m82ZmZnsjX7fYGFhIRHl5eU1+XRWMhgM9fX17Refl5fHSiUih8NhMpnS09PT09PZnszMzMLCQr1ezwpgO73faX19vV6v1+v13l8HEWm1WnZRL/Yu359zq9j3RUR6vd5oNGq1WvbLZdhvweFwsC8gmCAXAVrRai6y8PDLRa1W67unvLw8kFxsdSe7qPfzur6+XqvVFhYW+hbglwSZmZnsg5u9Ky8vj4Wo34c1SynfhCguLiYi35OzUGHZ085PhkWUXq93OBx+VfnWqdVq/SK2ZTC3VXzTv6MrPT3dW3BeXh77FnzLY9Ho3cOO8T3A70fqe/L2c5F9mwaDwXsY+xvF+11DEEMuArSCfZ62yi82WsabXyZ1OhfZp7xfYX41sGhpp5HX9O+UIiJv6jQ1NbEI9DvSmz3tnI1d0e+H4NfSZXHlFzwOh8PbCrxi8S3vZrGfmF6vb1mMyWTyPYY1UpnO5WJ9fb1fqd7LtWyIQ/DB80WANvnlVquDF41Go9VqjYmJ8T4XXLduXbdcvaysjFo8KWQv1dXV+R45evTods5jMpk8Hk96evq0adPYHqfT6b1t62vq1KlE5PF4OjoXjN+wFvbMz6+XZlRUFLui36iV9ov3422b+mpoaGBfxMXFNTU1paSkEJHNZktNTWXXqqioCPwSRFRTU0NEBoMhKirKd/+SJUs8Hk9qamqHzgZ9DnIRIFA6nW7lypV+O//4xz8ajUa73R4fH5+UlNSNs4uxj/tW/54NvENsVlaW3W43GAz/8R//4d3JPvdZI9KXt19ldXV1p8t2u91sNpkhQ4b4vcTis6qqqtMnD4TNZktKSlq7du0999zTTru/HSxHdTqd336dTsf+DMIEN8ENuQjQAeHh4atWrfLdo9PpSktLWWcQq9UaHx/fve2JDs0h4MfpdKalpRHRa6+95vspf/78eSKy2+1tvXHkyJGdvqh3vCZL35ZatlO7UWpq6gMPPLBixYrS0lJvx+COuuI4fUxwE9yQiwDdIDk5uba2Ni8vT6vV5ubmduNkYwcOHGi5M5DzK4oyZ84cIsrLy/O7HxgZGcm+cLvdrb53xIgRHS7037zXOnXqVKsHjBo1qtMnb19WVlZubu6LL77ovWPcOewOcGVlZTfVBX0MchGgMzIyMlhLzjuojohSUlLYHc6TJ092/RKzZ88motTUVL8mY35+fkhIyBXf/vzzz7tcLqPRyJ63MTabzWazxcXFsZuou3btavnGls/VOop1Pd2yZUurr86dO7crJ2/HwYMHySf1Oy08PNxoNHo8npZ/f9TW1hLRbbfd1sVLgJohFwE6rKSkxOPxsDuTubm5vq2uG2+8kX74aK3VZ3Vs0vDa2lpv5lksFtZA8R4/d+5crVbr8XgmTpzoXZcqPz//pZde8msPsfuifhXm5uZqtdo//vGPvvu9bbhnn32WiH7729/6hi6LgTVr1gT2Y2jTsmXLiMhqtfo+bXW73VarNT093e+5Xcvifd/Siat7f4But5vFGNOhO9Ks6+nq1at932Wz2Vh/pS62R0HteqPTK0CfwkaqEZFer/cbEl5fX89ulvqOtPMOva+vrzeZTL7DBOvr69nwcK1W69fpn12CDYg0Go2FhYWskwgb+cfOwMYd+vI9D7scK8B38AAb+Eg/HJjR9O/xl36jKXwnJWg56NBPfX29d2Sn93v0DsDwHbzhHTHpO2+Ad1x/O8X7ntB3xAUbQ0I/HN/pdwY2bIOI0tPTzWaz0WhkBxgMBpPJxI5p9eStKiwsZGP52RXZz6fl7xGCD3IR4AcC+WvSd4QfmwzF+5LZbPYbdO/Hd5w4e6M3VtlEKn5hxuZ8Ye81mUzeD2U2Vs+XN5a8x7fKN4QKCwu9s7qYTCa/S/tpeUU2iYHfTt/jvZUYDAbfHGqn+JY/tJa/FKPR2Gox3oE03uH/bPoCo9HIfm6tnrwdvvPysEl2/P5OgqCkaQrsgwAAAKA/wPNFAACAZshFAACAZshFAACAZshFAACAZshFAACAZshFAACAZshFAACAZshFAACAZshFAACAZshFAACAZshFAACAZshFAACAZshFAACAZshFAACAZshFAACAZshFAACAZv8PLt2/eXFSKeIAAAAASUVORK5CYII=" alt="Resistencia al corte según los criterios de Mohr y Coulomb">
+      <svg class="envhl fragment" data-o="0.5" viewBox="0 0 605 357" preserveAspectRatio="none" aria-hidden="true"><line class="glow" x1="72" y1="257.5" x2="511" y2="42"/><line class="core" x1="72" y1="257.5" x2="511" y2="42"/><text x="300" y="185" transform="rotate(-26 300 185)" text-anchor="middle">envolvente de falla</text></svg>
       <span class="hl fragment" data-o="1" style="left:3.5%;top:70%;width:8%;height:16%"></span>
       <span class="hl fragment" data-o="2" style="left:67%;top:14%;width:21%;height:14%"></span>
     </div>
@@ -477,14 +543,14 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 8 · ENVOLVENTE -->
-<section class="slide mc" data-note="(Mohr-Coulomb · parte 2) → dibuja tres ensayos con distinto σ3′: la línea tangente a todos es la envolvente. Luego mover σ1′ del círculo de prueba y preguntar antes de cada zona: ¿el suelo resiste? Estable, falla (tangente), imposible (la sobrepasa: ya habría fallado antes).">
+<section class="slide mc">
 <div>
   <h2>Envolvente de falla</h2>
   <div class="kw">
     <div class="chips"><span>varios ensayos</span><i>→</i><span>diferente estado de confinamiento (σ3)</span><i>→</i><span>círculo en falla</span><i>→</i><span>línea tangente a todos</span></div>
   </div>
   <div class="kw fragment" data-o="9"><small>La envolvente delimita los estados de esfuerzo posibles</small>
-    <div class="states"><span class="st ok">Debajo<b>estable</b></span><span class="st fail">Tangente<b>falla</b></span><span class="st imp">Sobrepasa<b>físicamente imposible</b></span></div>
+    <div class="states"><span class="st ok">Debajo<b>estable</b></span><span class="st fail">Tangente<b>falla</b></span><span class="st imp fragment" data-o="10">Sobrepasa<b>físicamente imposible</b></span></div>
     <div class="cite">(Budhu, 2015; Knappett &amp; Craig, 2012)</div>
   </div>
 </div>
@@ -499,7 +565,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 9 · CONOCIMIENTOS PREVIOS -->
-<section class="slide diag pick" data-note="(Conocimientos previos · según la propuesta escrita, justo antes de iniciar la explicación) Que respondan antes de explicar. Tampoco se corrige aquí: la respuesta aparece cuando construyamos σ′ = σ − u. Si alguien dice 'el agua carga una parte', usar esa frase textual más adelante.">
+<section class="slide diag pick">
 <div>
   <h2>Influencia del agua y del esfuerzo efectivo</h2>
   <p class="q2">Si un suelo tiene agua en sus poros y le aplicamos una carga, ¿cómo creen que se distribuye esa carga dentro del suelo?</p>
@@ -524,7 +590,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 10 · ESFUERZO EFECTIVO -->
-<section class="slide mc" data-note="(Esfuerzo efectivo) Retomar las respuestas de la pregunta anterior: '¿quién dijo que se reparte entre partículas y agua?'. → aparece la condición después de la lluvia (Figura 4 de la propuesta). → el concepto de esfuerzo efectivo: lo que soportan las partículas del suelo. → la ecuación (2). Preguntar: si σ no cambia y u aumenta, ¿qué le pasa a σ′?">
+<section class="slide mc">
 <div>
   <h2>Esfuerzo efectivo</h2>
   <div class="kw"><small>En un suelo saturado</small>
@@ -556,7 +622,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 11 · ¿QUÉ PASA SI AUMENTA u? -->
-<section class="slide mc" data-note="(Esfuerzo efectivo · cierre) Leer las dos preguntas ANTES de mover el deslizador y dejar que respondan. Luego subir u: la barra muestra cómo σ se reparte (σ′ entre partículas, u en el agua) y el círculo de esfuerzos efectivos se desplaza hacia la envolvente. → muestra la cadena y → de qué depende en campo.">
+<section class="slide mc">
 <div>
   <h2>¿Qué pasa si aumenta la presión de poros?</h2>
   <div class="ask"><p>Si σ se mantiene constante y aumenta u, ¿qué ocurre con el esfuerzo efectivo?</p><p>¿Qué implicación tendría sobre la resistencia al corte?</p></div>
@@ -577,7 +643,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 12a · EVALUACIÓN DE LA RESISTENCIA AL CORTE -->
-<section class="slide evalt" data-note="(Transición a ensayos) Mencionar que existen otros ensayos (de laboratorio y de campo), pero que en esta sesión se trabajan principalmente el corte directo y el triaxial, los más empleados.">
+<section class="slide evalt">
 <h2>Evaluación de la resistencia al corte</h2>
 <p class="path">Resistencia al corte <i>→</i> ¿Cómo la evaluamos? <i>→</i> Ensayos de laboratorio <i>→</i> <b>corte directo</b> y <b>triaxial</b></p>
 <div class="ecards">
@@ -596,7 +662,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 12 · CORTE DIRECTO -->
-<section class="slide mc wide" data-note="(Ensayos · 2 min en total para 12-14: ir rápido) Los ensayos reproducen en laboratorio los estados de esfuerzo y drenaje de campo. → se resalta la fuerza normal (σ), → la fuerza cortante (τ), → el plano AB. Destacar la limitación: el plano de falla lo impone el equipo.">
+<section class="slide mc wide">
 <div>
   <h2>Ensayo de corte directo</h2>
   <div class="kw"><small>Procedimiento</small>
@@ -621,15 +687,16 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 13 · TRIAXIAL -->
-<section class="slide mc" data-note="(Triaxial) → muestra con membrana, → presión confinante σ3 (agua de la cámara), → pistón que aplica el esfuerzo axial, → drenaje y medición. Destacar lo que lo diferencia del corte directo: se controla el drenaje y se mide la presión de poros. Mostrar las fotos del artículo propio (Muñoz et al., 2023): muestras en la cámara y después de la falla; el plano de falla aparece de forma natural.">
+<section class="slide mc">
 <div>
   <h2>Ensayo triaxial</h2>
   <div class="kw"><small>El más versátil</small>
     <div class="chips"><span>confinamiento σ3</span><i>+</i><span>esfuerzo desviador</span><i>→</i><span>control del drenaje</span><i>→</i><span>medición de la presión de poros</span></div>
     <div class="cite">(Terzaghi et al., 1996)</div></div>
   <div class="kw fragment" data-o="6"><small>Limitaciones</small>
-    <div class="chips"><span class="warn">equipo más sofisticado y costoso</span><span class="warn">CD: tiempos prolongados</span></div>
+    <div class="chips"><span class="warn">equipo más sofisticado y costoso</span><span class="warn">tiempos prolongados</span></div>
     <div class="cite">(Budhu, 2015; Knappett &amp; Craig, 2012)</div></div>
+  <div class="phases fragment" data-o="7"><b>Ensayo en tres fases</b><div class="ph"><span>saturación</span><i>→</i><span>consolidación</span><i>→</i><span>corte</span></div></div>
 </div>
 <div class="card chartcard">
   <div class="trx">
@@ -645,7 +712,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 14 · CD, CU, UU -->
-<section class="slide tri" data-note="(Tipos de triaxial) Explicar las tres columnas en términos de drenaje. Luego preguntar: retomando el talud, ¿cuál representa mejor la condición después de la lluvia? Clic en la columna que elija el grupo. → revela CU y la razón.">
+<section class="slide tri">
 <div class="trihead"><h2>Tipos de ensayo triaxial</h2>
   <p class="tq">Retomando el talud: ¿cuál representa mejor la condición después de la lluvia?</p></div>
 <div class="cols">
@@ -666,7 +733,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 15 · EJERCICIO: PLANTEAMIENTO -->
-<section class="slide mc" data-note="(Aplicación · 5 min) Retomar el talud del inicio. Leer el enunciado completo y dar unos segundos para pensar. Preguntar: ¿qué necesitamos calcular primero? Antes de calcular, pedir la predicción: si u pasa de 20 a 50 kPa, ¿la resistencia aumenta, se mantiene o disminuye? Marcar la respuesta del grupo. Usar los botones Antes/Después para mostrar el cambio del nivel de agua.">
+<section class="slide mc">
 <div>
   <h2>Ejercicio</h2>
   <div class="enun">
@@ -698,7 +765,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 16 · EJERCICIO: SOLUCIÓN -->
-<section class="slide sol" data-note="Cada paso: primero aparece la expresión, se pregunta el resultado al grupo y luego se muestra (→). Si alguien da un valor distinto, revisar en qué paso está la diferencia (u restado, tan 30°, unidades) antes de seguir.">
+<section class="slide sol">
 <h2>Solución</h2>
 <div class="solcols">
   <div class="solc"><h3>Antes de la lluvia <small>u = 20 kPa</small></h3>
@@ -717,7 +784,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 17 · EJERCICIO: COMPARACIÓN -->
-<section class="slide mc" data-note="Comparar: el punto baja por la envolvente. Preguntar: si los esfuerzos cortantes que actúan en el talud no cambian, ¿qué puede pasar con una resistencia disponible menor? Conectar con la falla del talud.">
+<section class="slide mc">
 <div>
   <h2>¿Qué cambió?</h2>
   <div class="kw"><div class="chips"><span>u: 20 → 50 kPa</span><i>→</i><span>σ′: 80 → 50 kPa</span><i>→</i><span>τ: 56,2 → 38,9 kPa</span></div></div>
@@ -726,13 +793,13 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
     <div><span>Después</span><div class="bb"><div class="d" style="width:69.2%"></div></div><em>38,9 kPa</em></div>
   </div>
   <p class="drop">La resistencia disponible disminuye <b>17,3 kPa (≈ 31 %)</b> sin que cambie el esfuerzo total.</p>
-  <div class="ask fragment"><p>Si los esfuerzos cortantes que actúan en el talud no cambian, ¿qué puede ocurrir con una resistencia disponible menor?</p></div>
+  <div class="ask fragment"><p>Si el talud sigue empujando igual, pero ahora el suelo resiste menos, ¿qué puede pasar?</p></div>
 </div>
 <div class="card chartcard"><svg id="exChart" viewBox="0 0 800 470" role="img" aria-label="Envolvente de Mohr-Coulomb con la condición antes y después de la lluvia"></svg></div>
 </section>
 
 <!-- 18 · RETORNO A LA PREGUNTA INICIAL -->
-<section class="slide mc ret" data-note="(Cierre · 2 min) Volver a la pregunta del inicio. Mostrar las ideas que dio el grupo (con sus votos) y preguntar: ¿ahora cómo la responderían? Dejar que respondan con sus palabras (evidencia de evaluación formativa). → aparece la cadena y se resalta la idea que la explica; comentar también las demás: la fricción disminuye, pero no porque el agua 'lubrique', sino porque baja σ′; el peso y la erosión pueden influir, pero no explican por sí solos la pérdida de resistencia.">
+<section class="slide mc ret">
 <div>
   <p class="q">¿Por qué un suelo que ha permanecido estable durante años puede fallar después de una lluvia intensa?</p>
   <div class="kw"><small>Lo que pensamos al inicio</small><div class="vr" id="voteRecap"></div></div>
@@ -743,7 +810,7 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 </section>
 
 <!-- 19 · IDEA CENTRAL -->
-<section class="slide syn2" data-note="Leer la idea central despacio. Es la frase que debe quedar de la sesión.">
+<section class="slide syn2">
 <svg class="synart" viewBox="0 0 1400 760" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
   <defs>
     <linearGradient id="skyS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#030e19"/><stop offset=".55" stop-color="#0b2d4a"/><stop offset="1" stop-color="#1b4f6e"/></linearGradient>
@@ -767,15 +834,15 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 
 
 <!-- 20 · REFERENCIAS -->
-<section class="slide refs" data-note="Referencias de la propuesta escrita. No se leen; solo quedan en pantalla unos segundos.">
+<section class="slide refs">
 <h2>Referencias</h2>
 <ul class="rl"><li>Budhu, M. (2015). <i>Soil mechanics fundamentals</i>. https://www.wiley.com/en-us/soil-mechanics-fundamentals-metric-version-p-9781119019657</li><li>Burland, J. B. (2012). <i>Chapter 17 Strength and deformation behaviour of soils</i>. https://doi.org/10.1680/MOGE.57074.0175</li><li>Carter, M., &amp; Bentley, S. P. (2016). Soil Properties and their Correlations: Second Edition. <i>Soil Properties and Their Correlations: Second Edition</i>, 1–222. https://doi.org/10.1002/9781119130888</li><li>Cernica, J. N. (1995). <i>Geotechnical engineering. Soil mechanics</i>. 453.</li><li>Coulomb, C. A. (1776). Essai sur une application de maximis et minimis à quelques de statique, relatives à l’Architecture. In <i>Mémories del Mathématique et de Physique presents à l’Académie Royale des Sciences</i> (Vol. 7), 343–382.</li><li>Knappett, J. A., &amp; Craig, R. F. (2012). Craig’s Soil Mechanics, Eighth edition. In <i>Craig’s Soil Mechanics, Eighth Edition</i>. CRC Press. https://doi.org/10.1201/b12841</li><li>Macedo, J., &amp; Pinho-Lopes, M. (2024). Key concepts in soil mechanics: simple hands-on and team-based strategies to promote active learning. In <i>Geotechnical Engineering Challenges to Meet Current and Emerging Needs of Society</i> (pp. 641–646). CRC Press. https://doi.org/10.1201/9781003431749-101</li><li>Mohr, O. (1900). Welche Umstände bedingen die Elastizitätsgrenze und den Bruch eines Materials? In <i>Zeitschrift des Vereins Deutscher Ingenieure</i> (Vol. 44, Number 45), 1524–1530.</li><li>Pantazidou, M. (2009). Student understanding of the concept of soil structure guides instructional interventions. <i>Proceedings of the 17th International Conference on Soil Mechanics and Geotechnical Engineering: The Academia and Practice of Geotechnical Engineering</i>, <i>3</i>, 2758–2761. https://doi.org/10.3233/978-1-60750-031-5-2758</li><li>Terzaghi, K., Peck, R. B., &amp; Mesri, G. (1996). <i>Soil Mechanics in Engineering Practice</i> (Wiley-Interscience, Ed.; 3rd ed.). John Wiley and Sons.</li><li>Wesley, L. D. (2009). Shear Strength of Soils. In <i>Fundamentals of Soil Mechanics for Sedimentary and Residual Soils</i> (pp. 185–234). Wiley. https://doi.org/10.1002/9780470549056.ch9</li></ul>
 </section>
 
 <!-- 21 · GRACIAS -->
-<section class="slide cover" data-note="Espacio para preguntas del jurado. Si hace falta volver a una diapositiva (laboratorios de Mohr-Coulomb o de presión de poros), usar la flecha ←.">
+<section class="slide cover">
 <div>
-  <h1>Gracias</h1>
+  <h1>Gracias por su atención</h1>
   <p class="big2">Preguntas</p>
   <div class="who"><b>Yeimy Ordoñez Muñoz</b><span>Aspirante · Perfil 2 Geotecnia · Escuela de Ingeniería Civil<br>Concurso profesoral UIS 002-2026</span></div>
 </div>
@@ -784,20 +851,20 @@ h1{font-size:clamp(42px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;marg
 
 </main>
 <footer><button class="btn nav" id="prev">← Anterior</button><div><div class="progress"><div class="bar" id="bar"></div></div><div class="counter" id="counter"></div></div><button class="btn nav primary" id="next">Siguiente →</button></footer>
-<aside class="notes" id="notes"><h4>Notas docente</h4><p id="noteText"></p></aside>
+
 </div>
 <script>
 const slides=[...document.querySelectorAll('.slide')];let idx=0;
-const prev=document.getElementById('prev'),next=document.getElementById('next'),bar=document.getElementById('bar'),counter=document.getElementById('counter'),notes=document.getElementById('notes'),noteText=document.getElementById('noteText');
+const prev=document.getElementById('prev'),next=document.getElementById('next'),bar=document.getElementById('bar'),counter=document.getElementById('counter');
 var frags=function(){return [...slides[idx].querySelectorAll('.fragment')]}
 var show=function(){slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
   slides[idx].querySelectorAll('.draw,.late').forEach(el=>{el.style.animation='none';void el.getBoundingClientRect();el.style.animation=''});
-  bar.style.width=((idx+1)/slides.length*100)+'%';counter.textContent=(idx+1)+' / '+slides.length;prev.disabled=idx===0;noteText.textContent=slides[idx].dataset.note||'';}
+  bar.style.width=((idx+1)/slides.length*100)+'%';counter.textContent=(idx+1)+' / '+slides.length;prev.disabled=idx===0;}
 var fwd=function(){const f=frags().find(x=>!x.classList.contains('show'));if(f){f.classList.add('show');return}if(idx<slides.length-1){idx++;show()}}
 var back=function(){const fs=frags().filter(x=>x.classList.contains('show'));if(fs.length){fs.at(-1).classList.remove('show');return}if(idx>0){idx--;show()}}
 prev.onclick=back;next.onclick=fwd;
-document.addEventListener('keydown',e=>{if(e.target.closest('input'))return;if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();window.fwd()}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();window.back()}if(e.key==='n')notes.classList.toggle('open');if(e.key==='r'&&window.resetSlope)resetSlope()});
-document.getElementById('notesBtn').onclick=()=>notes.classList.toggle('open');
+document.addEventListener('keydown',e=>{if(e.target.closest('input'))return;if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();window.fwd()}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();window.back()}if(e.key==='r'&&window.resetSlope)resetSlope()});
+
 document.getElementById('fullBtn').onclick=()=>document.documentElement.requestFullscreen?.();
 
 /* Votación de hipótesis (se recuerda para el cierre) */
@@ -972,6 +1039,8 @@ const _show=show;show=function(){_show();recap()};
 document.getElementById('resetBtn').onclick=()=>{if(!confirm('¿Reiniciar la clase? Se borran los votos y respuestas marcadas y se vuelve a la portada.'))return;
  try{localStorage.removeItem('rc_votes2');localStorage.removeItem('rc_votes')}catch(e){}
  location.hash='';location.reload();};
+/* numerar diapositivas */
+slides.forEach((sl,i)=>{if(i===0||i===slides.length-1)return;const n=document.createElement('div');n.className='snum';n.textContent=i+1;sl.appendChild(n)});
 show();
 </script>
 </body></html>
